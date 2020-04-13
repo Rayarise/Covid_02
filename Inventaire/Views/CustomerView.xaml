@@ -11,7 +11,7 @@
     <DockPanel>
         <StackPanel DockPanel.Dock="Top">
             <Menu>
-                <MenuItem Header="_Fichier">
+                <MenuItem Header="_Fichiers">
                     <MenuItem Header="_Ouvrir..."/>
                     <MenuItem Header="_Sauvegarder"/>
                     <MenuItem Header="_Fermer"/>
