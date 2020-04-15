@@ -44,5 +44,7 @@ namespace Inventaire
         {
             App.Current.Shutdown();
         }
+
+      
     }
 }

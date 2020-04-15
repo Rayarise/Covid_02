@@ -11,6 +11,7 @@ namespace BillingManagement.UI.ViewModels
 
         private ObservableCollection<Customer> customers;
         private Customer selectedCustomer;
+        
 
         public ObservableCollection<Customer> Customers
         {
@@ -41,6 +42,7 @@ namespace BillingManagement.UI.ViewModels
         {
             Customers = new ObservableCollection<Customer>(customersDataService.GetAll());
             Debug.WriteLine(Customers.Count);
+           
         }
 
     }

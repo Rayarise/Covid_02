@@ -10,11 +10,11 @@ namespace BillingManagement.Business
     public class ContactInfoDataService: IDataService<ContactInfo>
     {
 
-        readonly List<ContactInfo> contactInf;
+        readonly List<ContactInfo> contactInfos;
 
         public ContactInfoDataService()
         {
-            contactInf = new List<ContactInfo>
+            contactInfos = new List<ContactInfo>
             {
                 new ContactInfo() {ContactType="Cell", Contact="759-388-6783"},
                 new ContactInfo() {ContactType="Work", Contact="668-418-2708"},
@@ -524,7 +524,7 @@ namespace BillingManagement.Business
 
         public IEnumerable<ContactInfo> GetAll()
         {
-            foreach (ContactInfo c in contactInf)
+            foreach (ContactInfo c in contactInfos)
             {
                 yield return c;
             }
