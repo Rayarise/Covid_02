@@ -123,7 +123,7 @@
                 <StackPanel Grid.Row="6" Grid.Column="2" Margin="6">
                     <Button Content="Supprimer client" Click="CustomerDelete_Click"/>
                 </StackPanel>
-                <DataGrid Grid.Row="7"  Grid.Column="1" ItemsSource="{Binding SelectedCustomer.ContactInfos}">
+                <DataGrid x:Name="datagrid"  Grid.Row="7"  Grid.Column="1" ItemsSource="{Binding SelectedCustomer.ContactInfos}">
 
 
 
