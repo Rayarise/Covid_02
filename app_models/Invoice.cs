@@ -1,9 +1,12 @@
 ﻿using app_models;
 using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace BillingManagement.Models
 {
-    class Invoice
+    public class Invoice : INotifyPropertyChanged
+    
     {
 
         public int InvoiceId { get; set; }
@@ -13,9 +16,26 @@ namespace BillingManagement.Models
         Customer customer { get; set; }
 
         public Double SubTotal { get; set; }
-        public Double Fedtax { get; set; }
-        public Double ProvTax { get; set; }
-        public Double Total { get; set; }
+
+        public Double Fedtax
+        {
+            get { return SubTotal * 0.05; }
+            set { }
+        }       
+            
+            
+        
+        
+        public Double ProvTax
+        {
+            get { return SubTotal * 0.09975; }
+            set { }
+        }
+        public Double Total
+        {
+            get { return SubTotal + ProvTax + Fedtax; }
+            set { }
+        }
 
         public Invoice() {
 
@@ -27,6 +47,20 @@ namespace BillingManagement.Models
         {
             customer = c;
             CreationDateTime = DateTime.Now;
+        }
+
+
+
+
+
+
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName]string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
